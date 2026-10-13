@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <h1>🌿 My Life Dashboard</h1>
+    <p class="tagline">Stay focused. Stay organized.</p>
+    <div class="datetime-box">
+      <span id="current-date"></span>
+      <span class="sep">•</span>
+      <span id="current-time"></span>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="container">
+    <section class="card">
+      <h2>📋 My To-Do List</h2>
+
+      <!-- Form -->
+      <form id="todo-form">
+        <div class="form-row">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="What do you need to do?"
+            autocomplete="off"
+          />
+          <select id="todo-priority">
+            <option value="High">🔴 High</option>
+            <option value="Medium" selected>🟡 Medium</option>
+            <option value="Low">🟢 Low</option>
+          </select>
+          <button type="submit">+ Add Task</button>
+        </div>
+
+        <!-- Live preview — hidden until user types -->
+        <div class="preview-box" id="task-preview">
+          <p class="preview-label">Task Preview</p>
+          <div class="preview-content">
+            <span id="preview-text"></span>
+            <span class="badge" id="preview-badge">Medium</span>
+          </div>
+        </div>
+      </form>
+
+      <!-- Summary -->
+      <div class="summary-bar">
+        <div class="summary-item">
+          <span id="count-total" class="s-num">0</span>
+          <span class="s-label">Total</span>
+        </div>
+        <div class="summary-item">
+          <span id="count-done" class="s-num done">0</span>
+          <span class="s-label">Done</span>
+        </div>
+        <div class="summary-item">
+          <span id="count-pending" class="s-num pending">0</span>
+          <span class="s-label">Pending</span>
+        </div>
+      </div>
+
+      <!-- Task list -->
+      <ul id="todo-list"></ul>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
